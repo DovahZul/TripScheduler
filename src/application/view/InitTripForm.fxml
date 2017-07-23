@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="3000.0" maxWidth="402.0" minHeight="600.0" minWidth="402.0" prefHeight="600.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InitTripFormController">
+   <center>
+      <ScrollPane prefHeight="600.0" prefWidth="405.0" BorderPane.alignment="CENTER">
+         <content>
+            <AnchorPane layoutX="5.0" prefHeight="600.0" prefWidth="408.0">
+               <children>
+                  <ComboBox fx:id="master" layoutX="10.0" layoutY="211.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="16.0" layoutY="191.0" text="Капитан:" />
+                  <Label layoutX="18.0" layoutY="14.0" text="Подбор Персонала" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="242.0" text="Старший помощник" />
+                  <ComboBox fx:id="firstOfficer" layoutX="10.0" layoutY="262.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Separator layoutY="149.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <Separator layoutX="-5.0" layoutY="180.0" prefWidth="200.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="5.0" />
+                  <Label layoutX="12.0" layoutY="156.0" text="Основной состав">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="secondOfficer" layoutX="9.0" layoutY="315.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="12.0" layoutY="295.0" text="Второй помощник" />
+                  <Label layoutX="12.0" layoutY="344.0" text="Третий помощник (не обязательно)" />
+                  <ComboBox fx:id="thirdOfficer" layoutX="9.0" layoutY="364.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <ComboBox fx:id="thirdEng" layoutX="9.0" layoutY="573.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="12.0" layoutY="553.0" text="Четвёртый механик (не обязательно)" />
+                  <Label layoutX="12.0" layoutY="504.0" text="Третий механик" />
+                  <ComboBox fx:id="secondEng" layoutX="9.0" layoutY="524.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <ComboBox fx:id="firstEng" layoutX="10.0" layoutY="471.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="13.0" layoutY="451.0" text="Второй механик" />
+                  <Label layoutX="16.0" layoutY="400.0" text="Старший механик" />
+                  <ComboBox fx:id="ChiefEng" layoutX="10.0" layoutY="420.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="18.0" layoutY="632.0" text="Боцман" />
+                  <ComboBox fx:id="Boatswain" layoutX="10.0" layoutY="650.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <ComboBox fx:id="chiefSeamen" layoutX="8.0" layoutY="1030.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="11.0" layoutY="1012.0" text="Старший матрос" />
+                  <ComboBox fx:id="Donkerman" layoutX="8.0" layoutY="704.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="14.0" layoutY="684.0" text="Донкерман" />
+                  <Label layoutX="11.0" layoutY="735.0" text="Электромеханик" />
+                  <ComboBox fx:id="electroEngineer" layoutX="8.0" layoutY="755.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <ComboBox fx:id="motorMan" layoutX="7.0" layoutY="808.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="10.0" layoutY="788.0" text="Моторист" />
+                  <ComboBox fx:id="fourthSeamen" layoutX="6.0" layoutY="1183.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="9.0" layoutY="1162.0" text="Матрос (не обязателен)" />
+                  <Label layoutX="12.0" layoutY="1111.0" text="Матрос 2-го класса" />
+                  <ComboBox fx:id="thirdSeamen" layoutX="6.0" layoutY="1131.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <ComboBox fx:id="secondSeamen" layoutX="8.0" layoutY="1080.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="11.0" layoutY="1062.0" text="Матрос 1-го класса" />
+                  <Label layoutX="8.0" layoutY="841.0" text="Помошник по радиоэлектронике (не обязательно)" />
+                  <ComboBox fx:id="radioOfficer" layoutX="5.0" layoutY="859.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Separator layoutX="3.0" layoutY="37.0" prefHeight="3.0" prefWidth="400.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="-3.0" AnchorPane.topAnchor="37.0" />
+                  <Separator layoutX="6.0" layoutY="69.0" prefHeight="3.0" prefWidth="400.0" />
+                  <Label layoutX="13.0" layoutY="44.0" text="Выбор судна">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="shipName" layoutX="9.0" layoutY="94.0" prefHeight="25.0" prefWidth="232.0" promptText="Не выбрано" />
+                  <Label layoutX="13.0" layoutY="78.0" text="Судно:" />
+                  <Pane fx:id="additionalPersonal" layoutX="7.0" layoutY="1354.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="3.0">
+                     <children>
+                        <Label fx:id="pumpmanLabel" layoutX="3.0" layoutY="-1.0" text="Оператор насосной установки" />
+                        <ComboBox fx:id="refrigeratorEngineer" layoutY="77.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                        <ComboBox fx:id="gasEngineer" layoutY="20.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                        <ComboBox fx:id="pumpman" layoutY="19.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                        <Label fx:id="refrigeratorEngineerLabel" layoutX="1.0" layoutY="52.0" text="Рефмеханик (не обязательно)" />
+                        <Label fx:id="gasEngineerLabel" layoutX="3.0" text="Инженер-газовик" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="additionalPersonalLabel" layoutX="-5.0" layoutY="1310.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="9.0" text="Дополнительно">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutY="34.0" prefHeight="3.0" prefWidth="406.0" AnchorPane.leftAnchor="-5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="1344.0" />
+                        <Separator layoutX="5.0" prefHeight="3.0" prefWidth="406.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </Pane>
+                  <Label layoutX="8.0" layoutY="892.0" text="Повар" />
+                  <ComboBox fx:id="cook" layoutX="5.0" layoutY="910.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="7.0" layoutY="940.0" text="Судовой врач (не обязательно)" />
+                  <ComboBox fx:id="medicalOfficer" layoutX="4.0" layoutY="958.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label fx:id="shipTypeLabel" layoutX="14.0" layoutY="127.0" text="Тип судна: " />
+                  <ComboBox fx:id="motormanWelder" layoutX="3.0" layoutY="1241.0" prefHeight="25.0" prefWidth="236.0" promptText="Не указан" />
+                  <Label layoutX="6.0" layoutY="1221.0" text="Моторист-газоэлектросварщик (не обязательно)" />
+                  <Pane fx:id="oilPersonalPane1" layoutX="12.0" layoutY="1566.0" prefHeight="76.0" prefWidth="238.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                  <ProgressIndicator fx:id="prog" layoutX="294.0" layoutY="213.0" progress="0.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="160.0">
+         <children>
+            <DatePicker fx:id="startDate" layoutX="99.0" layoutY="36.0" />
+            <Button layoutY="34.0" mnemonicParsing="false" onAction="#handleConfirm" prefHeight="25.0" prefWidth="115.0" text="Подтвердить" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" BorderPane.alignment="CENTER" />
+            <DatePicker fx:id="endDate" layoutX="99.0" layoutY="84.0" />
+            <Label layoutX="103.0" layoutY="64.0" text="дата окончания" />
+            <Label layoutX="103.0" layoutY="15.0" text="Начало рейса" />
+            <Button fx:id="closeBtn" layoutX="197.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleClose" text="Отмена" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="130.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

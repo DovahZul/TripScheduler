@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.UserInfoController">
+   <children>
+      <BorderPane prefHeight="480.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <center>
+            <TableView fx:id="userInfoTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="itemUserId" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="itemUserFullName" prefWidth="75.0" text="ФИО" />
+                  <TableColumn fx:id="itemUserBirthday" prefWidth="75.0" text="Дата рождения" />
+                  <TableColumn fx:id="itemUserPost" prefWidth="75.0" text="Должность" />
+                  <TableColumn fx:id="itemUserCountry" prefWidth="89.0" text="Страна" />
+                  <TableColumn fx:id="itemUserLanguage" prefWidth="108.0" text="Язык" />
+                  <TableColumn fx:id="itemUserCurrentShip" prefWidth="142.0" text="Текущее судно:" />
+                  <TableColumn fx:id="itemUserSalary" prefWidth="75.0" text="Зарплата($/мес)" />
+              </columns>
+            </TableView>
+         </center>
+         <top>
+            <AnchorPane prefHeight="30.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="640.0" text="Информация о сотрудниках" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="admControlsUserInfo" layoutX="346.0" layoutY="7.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <Button layoutX="346.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleUpdateUsers" text="Обновить">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Separator minWidth="20.0" orientation="VERTICAL" />
+                        <Button layoutX="449.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleAddUser" text="Добавить сотрудника" />
+                        <Separator minWidth="20.0" orientation="VERTICAL" />
+                        <Button layoutX="624.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleEditUser" text="Изменить" />
+                        <Separator minWidth="20.0" orientation="VERTICAL" />
+                        <Button layoutX="701.0" layoutY="7.0" mnemonicParsing="false" onAction="#handleDeleteUser" text="Удалить выбранное" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

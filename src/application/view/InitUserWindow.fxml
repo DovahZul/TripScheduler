@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="700.0" maxWidth="400.0" minHeight="700.0" minWidth="400.0" prefHeight="700.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.InitUserWindowController">
+   <children>
+      <TextField fx:id="userFirstName" layoutX="93.0" layoutY="93.0" prefHeight="25.0" prefWidth="198.0" />
+      <TextField fx:id="userSurName" layoutX="93.0" layoutY="154.0" prefHeight="25.0" prefWidth="198.0" />
+      <TextField fx:id="userContry" layoutX="93.0" layoutY="223.0" prefHeight="25.0" prefWidth="198.0" />
+      <DatePicker fx:id="userBdate" layoutX="93.0" layoutY="346.0" />
+      <ComboBox fx:id="userPost" layoutX="92.0" layoutY="405.0" prefHeight="25.0" prefWidth="198.0" promptText="должность" />
+      <Pane layoutX="156.0" layoutY="670.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0">
+         <children>
+            <Button fx:id="addBtn" layoutX="82.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="153.0" text="Зарегистрировать" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="9.0" />
+            <Button fx:id="closeBtn" layoutX="19.0" mnemonicParsing="false" onAction="#handleClose" text="Отмена" AnchorPane.bottomAnchor="0.0" />
+         </children>
+      </Pane>
+      <TextField fx:id="userLanguage" layoutX="93.0" layoutY="288.0" prefHeight="25.0" prefWidth="198.0" />
+      <TextField fx:id="userLastName" layoutX="93.0" layoutY="33.0" prefHeight="25.0" prefWidth="198.0" />
+      <Label layoutX="93.0" layoutY="10.0" text="Фамилия:" />
+      <Label layoutX="96.0" layoutY="70.0" text="Имя" />
+      <Label layoutX="93.0" layoutY="133.0" text="Отчество" />
+      <Label layoutX="93.0" layoutY="200.0" text="Страна" />
+      <Label layoutX="93.0" layoutY="266.0" text="Язык" />
+      <Label layoutX="93.0" layoutY="324.0" text="Дата рождения" />
+      <Label layoutX="93.0" layoutY="383.0" text="Должность" />
+      <Separator layoutY="503.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <TextField fx:id="userLogin" layoutX="106.0" layoutY="549.0" />
+      <TextField fx:id="userPasswd" layoutX="106.0" layoutY="606.0" />
+      <Label layoutX="107.0" layoutY="526.0" text="Логин для входа:" />
+      <Label layoutX="109.0" layoutY="583.0" text="Пароль" />
+      <Label layoutX="95.0" layoutY="439.0" text="Месячный оклад($)" />
+      <TextField fx:id="userSalary" layoutX="92.0" layoutY="462.0" prefHeight="25.0" prefWidth="198.0" />
+   </children>
+</AnchorPane>

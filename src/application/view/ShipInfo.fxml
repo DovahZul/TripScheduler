@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.ShipInfoController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="30.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="640.0" text="Информация о судах" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children></AnchorPane>
+         </top>
+         <center>
+            <TableView fx:id="shipInfoTable" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="itemShipId" editable="false" prefWidth="55.0" text="ID" />
+                  <TableColumn fx:id="itemShipName" editable="false" prefWidth="188.0" text="Имя" />
+                  <TableColumn fx:id="itemShipType" editable="false" prefWidth="276.0" text="Тип" />
+                <TableColumn fx:id="itemShipStatus" editable="false" minWidth="0.0" prefWidth="120.0" text="Статус" />
+              </columns>
+            </TableView>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="30.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox fx:id="admControlsSHipInfo" layoutX="189.0" layoutY="9.0" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <Button layoutX="189.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleUpdate" text="Обновить" />
+                        <Separator minWidth="20.0" orientation="VERTICAL" />
+                        <Button layoutX="288.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleAddShip" text="Добавить судно" />
+                        <Separator minWidth="20.0" orientation="VERTICAL" />
+                        <Button layoutX="426.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleEditShip" text="Изменить" />
+                        <Separator minWidth="20.0" orientation="VERTICAL" />
+                        <Button layoutX="522.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleDeleteShip" text="Удалить выбранное" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

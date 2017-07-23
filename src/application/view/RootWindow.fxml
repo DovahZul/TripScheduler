@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="400.0" prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.RootController">
+   <top>
+      <AnchorPane>
+         <children>
+            <MenuBar prefHeight="30.0" prefWidth="783.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="Основное">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#handleSchedules" text="Расписания" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Персонал">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleUserInfo" text="Информация о сотрудниках" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Суда">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleShipInfo" text="Информация о судах" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="admMenuItem" mnemonicParsing="false" text="Администрирование">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleNewShip" text="Зарегистрировать новое судно" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleNewUser" text="Зарегистрировать нового сотрудника" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleNewTrip" text="Начать рейс" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleClearAllTempData" text="Очистить все рейсы и расписания" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleManageRootPwd" text="Сменить пароль администратора" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Справка">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#handleGeneralInfo" text="Общая информация" />
+                        <MenuItem mnemonicParsing="false" onAction="#handleShowContact" text="О программе" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Выход">
+                    <items>
+                      <MenuItem fx:id="logOutItem" mnemonicParsing="false" onAction="#handleLogOut" text="Сменить пользователя" />
+                        <MenuItem fx:id="exitItem" mnemonicParsing="false" onAction="#handleQuite" text="Завершить работу" />
+                    </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane disable="true" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="currentDateLabel" text="CurrentDateTimeLabel" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="635.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

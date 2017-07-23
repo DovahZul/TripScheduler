@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="240.0" maxWidth="400.0" minHeight="240.0" minWidth="400.0" prefHeight="240.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.EditShipWindowController">
+   <children>
+      <TextField fx:id="shipFullName" layoutX="24.0" layoutY="56.0" prefHeight="25.0" prefWidth="363.0" promptText="Латиница,кирилица и цифры,до 20 символов" />
+      <Label layoutX="181.0" layoutY="34.0" text="Имя" />
+      <Button fx:id="addBtn" layoutX="302.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleApply" text="Добавить" />
+      <Button fx:id="closeBtn" layoutX="219.0" layoutY="201.0" mnemonicParsing="false" onAction="#handleClose" text="отмена" />
+      <Label layoutX="182.0" layoutY="86.0" text="Тип" />
+      <ComboBox fx:id="shipType" layoutX="44.0" layoutY="108.0" prefHeight="25.0" prefWidth="325.0" promptText="Не определен" />
+   </children>
+</AnchorPane>

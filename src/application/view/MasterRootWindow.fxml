@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.view.MasterRootWindowController">
+   <children>
+      <Label layoutX="68.0" layoutY="22.0" text="Введите пароль администратора:" />
+      <Label layoutX="115.0" layoutY="107.0" text="Введите новый пароль" />
+      <Label layoutX="107.0" layoutY="170.0" text="Повторите новый пароль" />
+      <PasswordField fx:id="oldpwd" layoutX="47.0" layoutY="53.0" prefHeight="25.0" prefWidth="318.0" />
+      <PasswordField fx:id="newpwd" layoutX="111.0" layoutY="134.0" />
+      <PasswordField fx:id="newpwd2" layoutX="111.0" layoutY="192.0" />
+      <Button fx:id="closeBtn" layoutX="100.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleClose" text="Выход" />
+      <Button fx:id="addBtn" layoutX="228.0" layoutY="261.0" mnemonicParsing="false" onAction="#handleAdd" text="Сменить" />
+   </children>
+</AnchorPane>

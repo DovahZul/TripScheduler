@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="200.0" minWidth="265.0" prefHeight="202.0" prefWidth="276.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.MyXontactController">
+   <children>
+      <Label layoutX="45.0" layoutY="25.0" text="Автоматизированный планировщик" />
+      <Label layoutX="44.0" layoutY="63.0" text="рабочего времени экипажа судов" />
+      <Label layoutX="110.0" layoutY="128.0" prefHeight="0.0" prefWidth="57.0" text="Одесса 2017" AnchorPane.bottomAnchor="59.0">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="54.0" layoutY="101.0" text="и табелирования сотрудников" />
+      <Button fx:id="closeBtn" layoutX="109.0" layoutY="169.0" mnemonicParsing="false" onAction="#handleClose" text="Закрыть" />
+   </children>
+</AnchorPane>

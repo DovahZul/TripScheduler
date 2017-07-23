@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import application.util.*?>
+
+<BorderPane minHeight="480.0" minWidth="640.0" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.SchedulesController">
+   <center>
+      <TabPane fx:id="scheduleTabPane" prefHeight="480.0" prefWidth="640.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+          <Tab text="График швартовок">
+               <content>
+                  <BorderPane prefHeight="200.0" prefWidth="200.0">
+                     <center>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="mooringTable" layoutX="120.0" layoutY="24.0" prefHeight="180.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                    <TableColumn fx:id="itemHiddenMooringID" prefWidth="75.0" text="ID" />
+                                    <TableColumn fx:id="itemPortname" minWidth="0.0" prefWidth="99.0" text="Порт" />
+                                  <TableColumn fx:id="itemStart" prefWidth="187.0" text="Дата\время прибытия" />
+                                  <TableColumn fx:id="itemEnd" prefWidth="186.0" text="Дата\время отбытия" />
+                                    <TableColumn fx:id="itemResponsible" prefWidth="167.0" text="Ответственное лицо" />
+                                    <TableColumn fx:id="itemStatus" prefWidth="75.0" text="Статус" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </center>
+                     <top>
+                        <AnchorPane prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <Group fx:id="admMooringControls" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <Button layoutX="130.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleDeleteMooring" text="Удалить запись" />
+                                    <Separator layoutX="115.0" layoutY="5.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="15.0" />
+                                    <Button layoutX="5.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleNewMooring" text="Новая запись" />
+                                    <Separator layoutX="256.0" layoutY="5.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="15.0" />
+                                    <Button layoutX="268.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleUpdateMooring" text="Обновить" />
+                                    <ComboBox fx:id="admSwitchShip" layoutX="484.0" layoutY="5.0" prefHeight="25.0" prefWidth="189.0" promptText="Рейс" />
+                                    <Separator layoutX="358.0" layoutY="5.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="15.0" />
+                                    <Button layoutX="377.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleEditMooring" text="Изменить" />
+                                    <Separator layoutX="467.0" layoutY="5.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="15.0" />
+                                 </children>
+                              </Group>
+                           </children>
+                        </AnchorPane>
+                     </top>
+                  </BorderPane>
+               </content>
+          </Tab>
+          <Tab fx:id="personalScheduleTab" text="Личный график вахт">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <BorderPane prefHeight="397.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <TableView fx:id="personalWatchTable" editable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" BorderPane.alignment="CENTER">
+                                 <columns>
+                                    <TableColumn fx:id="itemDate" prefWidth="138.0" text="Дата" />
+                                    <TableColumn fx:id="itemHours" prefWidth="179.0" text="Часы вахты" />
+                                <TableColumn fx:id="selectColumn" prefWidth="154.0" text="Подтверждено">
+         								 <cellFactory>
+              						<CheckBoxCellFactory />
+          							</cellFactory>
+      							</TableColumn>
+                                 </columns>
+                              </TableView>
+                           </center>
+                           <bottom>
+                              <AnchorPane minWidth="640.0" prefHeight="40.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox fx:id="admScheduleControls" layoutX="-243.0" layoutY="13.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                       <children>
+                                          <ComboBox fx:id="admSwitchUser" layoutX="-248.0" layoutY="8.0" prefHeight="25.0" prefWidth="180.0" promptText="Пользователь" />
+                                          <Separator minWidth="10.0" orientation="VERTICAL" />
+                                          <Button fx:id="admBtnCheckAll" layoutX="-62.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleCheckAll" text="Отметить всё" AnchorPane.bottomAnchor="-6.0" AnchorPane.topAnchor="8.0" />
+                                          <Separator minWidth="10.0" orientation="VERTICAL" />
+                                          <Button fx:id="admBtnCheckTilToday" layoutX="33.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleCheckTillToday" text="отметить до текущей даты" />
+                                          <Separator minWidth="10.0" orientation="VERTICAL" />
+                                          <Button fx:id="admBtnRepealChecks" layoutX="201.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleUpdatePersWatch" text="Отмена" />
+                                          <Separator minWidth="10.0" orientation="VERTICAL" />
+                                          <Button fx:id="admBtnSaveChecks" layoutX="265.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleSaveCheckBoxes" text="Подтвердить норму" AnchorPane.bottomAnchor="-7.0" AnchorPane.rightAnchor="248.0" AnchorPane.topAnchor="8.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </bottom>
+                           <right>
+                              <AnchorPane minWidth="230.0" prefHeight="357.0" prefWidth="230.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <VBox layoutX="5.0" layoutY="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+                                       <children>
+                                          <AnchorPane>
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="15.0" prefWidth="220.0" text="Сводка" textFill="#070707" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                   <font>
+                                                      <Font name="Abyssinica SIL" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </AnchorPane>
+                                          <Separator prefHeight="20.0" prefWidth="190.0" />
+                                          <Label text="Дата заступления:" />
+                                          <Label fx:id="startDateLabel" text="не определено" />
+                                          <Separator prefHeight="20.0" prefWidth="190.0" />
+                                          <Label text="Дата сдачи:" />
+                                          <Label fx:id="endDateLabel" text="не определено" />
+                                          <Separator prefHeight="20.0" prefWidth="190.0" />
+                                          <Label layoutX="14.0" layoutY="14.0" text="Общее кол-во рабочих суток:" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                          <Label fx:id="totalCountDaysLabel" layoutX="5.0" layoutY="29.0" text="не определено" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0" />
+                                          <Separator prefHeight="20.0" prefWidth="190.0" />
+                                          <Label text="Прошло суток:" />
+                                          <Label fx:id="goneDaysLabel" text="не определено" />
+                                          <Separator prefHeight="20.0" prefWidth="190.0" />
+                                          <Label text="Подтверждено:" />
+                                          <Label fx:id="checkedDaysLabel" text="не определено" />
+                                          <Separator prefHeight="20.0" prefWidth="190.0" />
+                                          <Label text="Осталось работать:" />
+                                          <Label fx:id="remainedDaysLabel" text="не определено" />
+                                       </children>
+                                    </VBox>
+                                    <Button layoutX="5.0" layoutY="345.0" mnemonicParsing="false" onAction="#hadleShowSalary" prefHeight="25.0" prefWidth="220.0" text="Табелирование" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+                                 </children>
+                              </AnchorPane>
+                           </right>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="commonScheduleTabV2" text="Общий график вахт на судне">
+              <content>
+                  <AnchorPane>
+                     <children>
+                        <BorderPane prefHeight="377.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <center>
+                              <TableView fx:id="commonWatchTableV2" prefHeight="417.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                                <columns>
+                                  <TableColumn fx:id="itemEmployeeFioV2" minWidth="200.0" prefWidth="39.0" text="Сотрудник" />
+                                    <TableColumn fx:id="itemEmployeePostV2" minWidth="100.0" prefWidth="75.0" text="Должность" />
+                                  <TableColumn fx:id="itemHour00" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="00:00" />
+                                    <TableColumn fx:id="itemHour01" minWidth="50.0" prefWidth="50.0" sortable="false" text="1:00" />
+                                    <TableColumn fx:id="itemHour02" editable="false" minWidth="50.0" prefWidth="50.0" sortable="false" text="2:00" />
+                                    <TableColumn fx:id="itemHour03" editable="false" minWidth="50.0" prefWidth="50.0" sortable="false" text="3:00" />
+                                    <TableColumn fx:id="itemHour04" editable="false" minWidth="50.0" prefWidth="50.0" sortable="false" text="4:00" />
+                                    <TableColumn fx:id="itemHour05" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="5:00" />
+                                    <TableColumn fx:id="itemHour06" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="6:00" />
+                                    <TableColumn fx:id="itemHour07" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="7:00" />
+                                    <TableColumn fx:id="itemHour08" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="8:00" />
+                                    <TableColumn fx:id="itemHour09" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="9:00" />
+                                    <TableColumn fx:id="itemHour10" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="10:00" />
+                                    <TableColumn fx:id="itemHour11" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="11:00" />
+                                    <TableColumn fx:id="itemHour12" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="12:00" />
+                                    <TableColumn fx:id="itemHour13" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="13:00" />
+                                    <TableColumn fx:id="itemHour14" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="14:00" />
+                                    <TableColumn fx:id="itemHour15" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="15:00" />
+                                    <TableColumn fx:id="itemHour16" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="16:00" />
+                                    <TableColumn fx:id="itemHour17" editable="false" minWidth="50.0" prefWidth="50.0" sortable="false" text="17:00" />
+                                    <TableColumn fx:id="itemHour18" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="18:00" />
+                                    <TableColumn fx:id="itemHour19" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="19:00" />
+                                    <TableColumn fx:id="itemHour20" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="20:00" />
+                                    <TableColumn fx:id="itemHour21" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="21:00" />
+                                    <TableColumn fx:id="itemHour22" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="22:00" />
+                                    <TableColumn fx:id="itemHour23" editable="false" minWidth="50.0" prefWidth="50.0" resizable="false" sortable="false" text="23:00" />
+                                </columns>
+                              </TableView>
+                           </center>
+                           <bottom>
+                              <AnchorPane prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <HBox alignment="CENTER" layoutX="228.0" layoutY="5.0" prefHeight="40.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Button layoutX="228.0" layoutY="8.0" mnemonicParsing="false" onAction="#handlePreviousDate" text="&lt;&lt;">
+                                             <HBox.margin>
+                                                <Insets right="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                          <DatePicker fx:id="commonScheduleV2Swicher" layoutX="277.0" layoutY="8.0" AnchorPane.bottomAnchor="5.0" AnchorPane.topAnchor="5.0" />
+                                          <Button layoutX="484.0" layoutY="8.0" mnemonicParsing="false" onAction="#handleNextDate" text="&gt;&gt;">
+                                             <HBox.margin>
+                                                <Insets left="10.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </AnchorPane>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </center>
+   <top>
+      <AnchorPane fx:id="UserAnchorPane" prefHeight="60.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="10.0" layoutY="28.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0">
+               <children>
+                  <Label fx:id="shipNameLabel" layoutX="10.0" layoutY="28.0" text="Судно" />
+                  <Separator orientation="VERTICAL" prefWidth="10.0" />
+                  <Label fx:id="forNewbie" onMouseClicked="#hadleNewbie" onMouseEntered="#handForNewbieHover" onMouseExited="#handForNewbieLeave" text="Вы тут впервые?" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="14.0" layoutY="7.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <children>
+                  <Label fx:id="welcomeLabel" layoutX="14.0" layoutY="7.0" text="пустое приветствие" />
+                  <Separator orientation="VERTICAL" prefWidth="10.0" />
+                  <Label fx:id="postLabel" layoutX="171.0" layoutY="7.0" text="должность" />
+               </children>
+            </HBox>
+            <Button fx:id="exitBtn" layoutX="617.0" layoutY="13.0" mnemonicParsing="false" onAction="#handleLogOut" prefHeight="40.0" prefWidth="80.0" text="Выйти" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>
